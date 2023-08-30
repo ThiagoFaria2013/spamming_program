@@ -10,16 +10,21 @@ def localizacao():
     return posição
 
 
-
-def spama(posição, vezes_para_mandar):
-    pag.write('spamming')
+def spama(posição, vezes_para_mandar, mensagem):
+    pag.write(mensagem)
     pag.press('enter')
 
 
+def definir_mensagem():
+    mensagem = input('write the message that you want to spam:')
+    return mensagem
+
+
+mensagem = definir_mensagem()
 posição = localizacao()
 
 pag.click(posição)
 
 while vezes_para_mandar <= 10:
-    spama(posição,vezes_para_mandar)
+    spama(posição,vezes_para_mandar,mensagem)
     vezes_para_mandar += 1
